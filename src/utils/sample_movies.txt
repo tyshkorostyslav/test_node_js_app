@@ -1,0 +1,69 @@
+Title: Raiders of the Lost Ark
+Release Year: 1981
+Format: DVD
+Stars: Harrison Ford, Karen Allen
+
+Title: Serenity
+Release Year: 2005
+Format: Blu-Ray
+Stars: Nathan Fillion, Alan Tudyk, Adam Baldwin, Ron Glass, Jewel Staite, Gina Torres, Morena Baccarin, Sean Maher, Summer Glau, Chiwetel Ejiofor
+
+Title: Hooisers
+Release Year: 1986
+Format: VHS
+Stars: Gene Hackman, Barbara Hershey, Dennis Hopper
+
+Title: WarGames
+Release Year: 1983
+Format: VHS
+Stars: Matthew Broderick, Ally Sheedy, Dabney Coleman, John Wood, Barry Corbin
+
+Title: Spaceballs
+Release Year: 1987
+Format: DVD
+Stars: Bill Pullman, John Candy, Mel Brooks, Rick Moranis, Daphne Zuniga, Joan Rivers
+
+Title: Young Frankenstein
+Release Year: 1974
+Format: VHS
+Stars: Gene Wilder, Kenneth Mars, Terri Garr, Gene Hackman, Peter Boyle
+
+Title: Real Genius
+Release Year: 1985
+Format: VHS
+Stars: Val Kilmer, Gabe Jarret, Michelle Meyrink, William Atherton
+
+Title: Top Gun
+Release Year: 1986
+Format: DVD
+Stars: Tom Cruise, Kelly McGillis, Val Kilmer, Anthony Edwards, Tom Skerritt
+
+Title: MASH
+Release Year: 1970
+Format: DVD
+Stars: Donald Sutherland, Elliot Gould, Tom Skerritt, Sally Kellerman, Robert Duvall
+
+Title: The Russians Are Coming, The Russians Are Coming
+Release Year: 1966
+Format: VHS
+Stars: Carl Reiner, Eva Marie Saint, Alan Arkin, Brian Keith
+
+Title: Jaws
+Release Year: 1975
+Format: DVD
+Stars: Roy Scheider, Robert Shaw, Richard Dreyfuss, Lorraine Gary
+
+Title: 2001: A Space Odyssey
+Release Year: 1968
+Format: DVD
+Stars: Keir Dullea, Gary Lockwood, William Sylvester, Douglas Rain
+
+Title: Harvey
+Release Year: 1950
+Format: DVD
+Stars: James Stewart, Josephine Hull, Peggy Dow, Charles Drake
+
+Title: Knocked Up
+Release Year: 2007
+Format: Blu-Ray
+Stars: Seth Rogen, Katherine Heigl, Paul Rudd, Leslie Mann

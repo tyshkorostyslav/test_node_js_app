@@ -1,0 +1,9 @@
+{
+    "IP": "localhost",
+    "PORT": 4000,
+    "MONGODB_PWORD": "error456456",
+    "MONGODB_DBNAME": "Cluster0",
+    "MONGODB_TEST_DBNAME": "TEST_DB",
+    "GOOD_FORMATS": ["VHS", "DVD", "Blu-Ray"],
+    "TEST_FILE_PATH": "D:\\devel\\test_node_js_app\\src\\utils\\sample_movies.txt"
+}
