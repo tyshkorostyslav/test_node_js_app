@@ -11,5 +11,5 @@
 1. REST API is situated in src/app.js, app starts woking from ```src/server.js``` .
 1. Everyting concerning logging is situated in ```src/logging``` directory. Logging is using winston module. One can read logs in ```src/logging/logs``` directory.
 1. Txt files parsing and util for uploading file is situated in ```src/utils``` directory.
-1. CLI is called ```movie-cli```. Everyting concerning CLI is situated in ```src/cli``` directory. CLI is using inquirer and args modules. One needs to run ```npm link``` to be able to use the CLI.(It is better done on UNIX-like systems because npm link seems not to work on Windows. The reason I haven't published the module to npm is because I don't want to litter npm even mode when there is more than 1 million of modules published).
+1. CLI is called ```movie-cli```. Everyting concerning CLI is situated in ```src/cli``` directory. CLI is using inquirer and args modules. One needs to run ```npm link``` to be able to use the CLI.(It is better done on UNIX-like systems because npm link seems not to work on Windows. The reason I haven't published the module to npm is because I don't want to litter npm even more when there is more than 1 million of modules published).
 1. CLI interface is very easy to use. One is just asked questions.
