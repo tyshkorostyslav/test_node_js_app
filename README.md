@@ -1,6 +1,7 @@
 # Test Node.JS App
 
 ### General
+1. Firstly one has to run ```npm i``` to install all needed modules.
 1. Launching the app is very easy due to scripts:
     1. ```npm run prod``` will run production server.
     1. ```npm run dev``` will run developer server under nodemon.
