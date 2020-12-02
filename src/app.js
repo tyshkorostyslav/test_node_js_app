@@ -5,8 +5,10 @@ const fs = require('fs')
 const config = require('config')
 const express = require('express')
 
+const START_YEAR = config.get('START_YEAR')
+const FINISH_YEAR = config.get('FINISH_YEAR')
 const GOOD_FORMATS = config.get('GOOD_FORMATS')
-const { findByStar, movieInDB} = require('./db/db_functions')
+const { findByTitle, findByStar, movieInDB, movieInDBMore } = require('./db/db_functions')
 const { parse_data } = require('./utils/txt_parsing')
 const { upload } = require('./utils/upload')
 const logger = require('./logging/logger.js')
@@ -122,8 +124,9 @@ app.get('/find_movie', async(req, res) => {
   logger.info('find_movie request was called')
   if (req.query.title) {
     try {
-      if (await movieInDB(req.query.title)) {
-        res.send('Such movie exists in database')
+      const movies = await findByTitle(req.query.title)
+      if (movies.length) {
+        res.json(Array.from(movies, movie => movie.title))
       } else {
         res.send("Such movie doesn't exist in database")
       }
@@ -166,7 +169,12 @@ app.get('/find_movie/star', async(req, res) => {
 
 
 const addMovie = async(movieObj) => {
-  if (('title' in movieObj) && (await movieInDB(movieObj.title))) {
+  if (
+    ('title' in movieObj) &&
+  ('releaseYear' in movieObj) &&
+  ('stars' in movieObj) &&
+  (await movieInDBMore(movieObj.title, movieObj.releaseYear, movieObj.stars))
+  ) {
     logger.error({
       message: 'Movie with this title already exists',
       data: movieObj,
@@ -182,6 +190,19 @@ const addMovie = async(movieObj) => {
     // eslint-disable-next-line max-len
     return 'Wrong format in ' + JSON.stringify(movieObj) + ', please, try one more time.'
   } else if (
+    ('releaseYear' in movieObj) &&
+    (
+      (movieObj.releaseYear > FINISH_YEAR) ||
+      (movieObj.releaseYear < START_YEAR)
+    )
+  ) {
+    logger.error({
+      message: 'Wrong year',
+      data: movieObj,
+    })
+    // eslint-disable-next-line max-len
+    return 'Wrong year in ' + JSON.stringify(movieObj) + ', please, try one more time.'
+  } else if (
     ('title' in movieObj) &&
     ('releaseYear' in movieObj) &&
     ('format' in movieObj) &&
@@ -191,7 +212,7 @@ const addMovie = async(movieObj) => {
       title: movieObj.title,
       releaseYear: movieObj.releaseYear,
       format: movieObj.format,
-      stars: movieObj.stars,
+      stars: Array.from(new Set(movieObj.stars)), // preserving only unique names of stars here
     })
     try {
       await movie.save()

@@ -5,5 +5,7 @@
     "MONGODB_DBNAME": "Cluster0",
     "MONGODB_TEST_DBNAME": "TEST_DB",
     "GOOD_FORMATS": ["VHS", "DVD", "Blu-Ray"],
+    "START_YEAR": 1850,
+    "FINISH_YEAR": 2020,
     "TEST_FILE_PATH": "D:\\devel\\test_node_js_app\\src\\utils\\sample_movies.txt"
 }

@@ -49,7 +49,7 @@ describe('finding movies', function() {
           .then((res) => {
             const text = res.text
             expect(text).to.equal(
-              'Such movie exists in database',
+              '["new_movie_from_test"]',
             )
             done()
           }).catch((err) => done(err))

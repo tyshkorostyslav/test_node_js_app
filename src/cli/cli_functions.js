@@ -72,7 +72,7 @@ async function promptForActions(options) {
       try {
         const requestString = URL + '/find_movie?title=' + options.data
         const response = await axios.get(requestString)
-        console.log(response)
+        console.log(response.data)
       } catch (err) {
         console.log(err)
       }

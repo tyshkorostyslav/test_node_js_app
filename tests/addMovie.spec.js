@@ -67,6 +67,28 @@ describe('getting movies', function() {
   })
 
   // eslint-disable-next-line no-undef
+  it('adding 1 movie with duplicate stars', (done) => {
+    request(app).post('/')
+      .send(
+        {
+          title: 'new_movie_with_duplicate_stars',
+          format: 'DVD',
+          releaseYear: 2020,
+          stars: ['star24', 'star24', 'q12', 'q12', 't48'],
+        },
+      )
+      .then((res) => {
+        request(app).get('/about_movie?title=new_movie_with_duplicate_stars')
+          .then((res) => {
+            const stars = res.body[0].stars;
+            expect(stars.length).to.equal(3);
+            done();
+          })
+      })
+      .catch((err) => done(err));
+  })
+
+  // eslint-disable-next-line no-undef
   it('failing to add a movie that has existing title', (done) => {
     request(app).post('/')
       .send(
@@ -103,6 +125,28 @@ describe('getting movies', function() {
         expect(text).to.equal(
           // eslint-disable-next-line max-len
           'Wrong format in {"title":"new_movie_2_from_test","format":"q11","releaseYear":2020,"stars":["star24","act48","q12"]}, please, try one more time.',
+        )
+        done();
+      })
+      .catch((err) => done(err));
+  })
+
+  // eslint-disable-next-line no-undef
+  it('failing to add a movie that has wrong year', (done) => {
+    request(app).post('/')
+      .send(
+        {
+          title: 'new_movie_2_from_test',
+          format: 'DVD',
+          releaseYear: 1800,
+          stars: ['star24', 'act48', 'q12'],
+        },
+      )
+      .then((res) => {
+        const text = res.text;
+        expect(text).to.equal(
+          // eslint-disable-next-line max-len
+          'Wrong year in {"title":"new_movie_2_from_test","format":"DVD","releaseYear":1800,"stars":["star24","act48","q12"]}, please, try one more time.',
         )
         done();
       })

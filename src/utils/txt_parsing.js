@@ -1,14 +1,14 @@
 'use strict'
 
 const parse_data = data => {
-  const movies_text = data.split('\r\n\r\n')
+  const movies_text = data.split('\n\n')
   let movies = []
   for (const movie_text of movies_text) {
     // Split the text by lines that separate blocks
     // of data that concerns each movie and then
     // building objects that represent movies
     // from these blocks.
-    let movie = movie_text.split('\r\n').reduce((movie, row) => {
+    let movie = movie_text.split('\n').reduce((movie, row) => {
       if (row) {
         const key = formatKeyString(row)
         const value = row.split(': ')[1]
